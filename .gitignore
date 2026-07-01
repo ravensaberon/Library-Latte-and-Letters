@@ -1,0 +1,26 @@
+/target/
+/.mvn/
+/.m2/
+/.codex-m2/
+/.idea/
+/.classpath
+/.project
+/.settings/
+/.vscode/settings.json
+/tools/
+/logs/
+/scripts/local-dev-env.env
+/scripts/local-dev.properties
+
+# Local runtime output
+*.log
+*.out
+*.err
+/cookies.txt
+/temp_*.html
+
+# App-generated storage
+/storage/ebooks/
+/storage/email-outbox/
+/storage/profile-pictures/
+/storage/book-covers/test-*

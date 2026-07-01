@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Latte and Letters (Spring Boot)",
+      "request": "launch",
+      "mainClass": "com.latteandletters.LatteAndLettersApplication",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "shortenCommandLine": "auto",
+      "env": {
+        "LATTE_AND_LETTERS_DB_URL": "jdbc:mysql://127.0.0.1:3306/latte_and_letters?useSSL=false&serverTimezone=Asia/Manila&allowPublicKeyRetrieval=true",
+        "LATTE_AND_LETTERS_DB_USERNAME": "${input:dbUsername}",
+        "LATTE_AND_LETTERS_DB_PASSWORD": "${input:dbPassword}",
+        "LATTE_AND_LETTERS_ATTENDANCE_BASE_URL": "http://localhost:8081",
+        "LATTE_AND_LETTERS_CAFE_BASE_URL": "http://localhost:8082"
+      },
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Started .* in .* seconds",
+        "uriFormat": "http://localhost:8080"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Open Latte and Letters in Chrome (manual)",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "dbUsername",
+      "type": "promptString",
+      "description": "MySQL username",
+      "default": "root"
+    },
+    {
+      "id": "dbPassword",
+      "type": "promptString",
+      "description": "MySQL password",
+      "password": true,
+      "default": ""
+    }
+  ]
+}
